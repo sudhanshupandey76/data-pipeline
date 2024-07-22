@@ -1,0 +1,66 @@
+Documentation
+
+Pipeline Design and Implementation
+
+Overview:
+The pipeline is designed to perform an ETL (Extract, Transform, Load) process involving restaurant and review data. It consists of four main components:
+
+Data Ingestion (data_ingestion.py)
+Data Transformation (data_transformation.py)
+Data Loading (data_loading.py)
+Airflow DAG (data_pipeline_dag.py)
+
+Components:
+
+Data Ingestion (data_ingestion.py):
+
+Purpose: To load data from JSON and SQLite sources.
+
+Classes:
+DataLoader (abstract base class): Defines the interface for data loaders.
+JSONDataLoader: Loads restaurant data from a JSON file.
+SQLiteDataLoader: Loads review data from a SQLite database.
+DataIngestionManager: Manages and executes data loaders.
+
+
+Data Transformation (data_transformation.py):
+
+Purpose: To clean and prepare the ingested data for loading.
+
+Classes:
+DataCleaner (abstract base class): Defines the interface for data cleaning.
+RestaurantDataCleaner: Cleans restaurant data, including removing duplicates, standardizing text, and handling specific fields like ratings and costs.
+ReviewDataCleaner: Cleans review data, including handling helpfulness ratios, timestamps, and text fields.
+
+
+Data Loading (data_loading.py):
+
+Purpose: To load cleaned data into a Redshift database.
+
+Classes:
+DatabaseOperator (abstract base class): Defines the interface for database operations.
+RedshiftLoader: Loads data into Redshift.
+RedshiftUpserter: Upserts data into Redshift (insert new records and update existing ones).
+DatabaseManager: Manages database connections and operations.
+
+
+Airflow DAG (data_pipeline_dag.py):
+
+Purpose: Orchestrates the ETL pipeline using Airflow.
+
+Tasks:
+ingest_data: Runs the data ingestion script.
+transform_data: Runs the data transformation script.
+load_data: Runs the data loading script.
+Alerts: Sends Slack notifications on task failures.
+
+
+Assumptions:
+
+The JSON and SQLite datasets are correctly formatted and accessible.
+The Redshift database is properly configured and accessible.
+Airflow is set up and configured to run the DAG.
+
+Note:- Because of time constraint couldn't implement the bsloe step
+
+Wanted to make it config driven, we can pass all config details, table names and business logic via config file
