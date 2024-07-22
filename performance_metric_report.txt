@@ -1,0 +1,46 @@
+Performance Measures Report
+
+1. Introduction
+Data pipeline is structured to retrieve JSON and SQLite data, convert it, and load it into a destination data warehouse. Some of the key components include data loaders for JSON and SQLite; data cleaners for restaurants and reviews; and finally the Data Loader Manager that is responsible for handling data ingestion.
+
+2. Performance Metrics
+
+2.1. Data Ingestion
+
+Metrics:
+
+Data Loading Time: The time taken to load data from JSON and SQLite sources are approximately around 25-30 seconds.
+
+Data Volume: No. of rows in restaurant data(json) are 53013.
+             No. of rows in reviews data(sqllite) are 568454.
+
+2.2. Data Transformation
+
+Metrics:
+
+Transformation Time: The time taken to clean and transform the data is approximately around 15-20 seconds.
+
+Data Quality Metrics: Seventy percent (95%) had their names standardized while all missing ratings were filled with median value; any unwanted spaces were also removed.
+
+2.3. Data Loading to Target System
+
+Metrics:
+
+Load Time: The amount of time it took to load transformed information into target database was between ten-15 (10 - 15 secons).
+
+Load Volume: They comprised of 53013 restaurant records as well as a total of 568454 review records for each one respectively.
+
+Optimizations Made
+
+Implemented modular cleaning functions for specific tasks, improving code readability and maintainability.
+
+Applied data type conversions early in the cleaning process, ensuring consistency and improving downstream processing efficiency.
+
+4. Conclusion
+
+The data pipeline demonstrates efficient performance in terms of data ingestion, transformation, and loading. 
+Key optimizations have improved processing speeds and data quality. 
+We can focus on future improvements by further optimizing data cleaning processes and 
+exploring additional parallel processing techniques.
+Also we can work on the config based approach and build a framework which will be useful for other sources also.
+
