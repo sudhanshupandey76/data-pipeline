@@ -30,7 +30,7 @@ Load Time: The amount of time it took to load transformed information into targe
 
 Load Volume: They comprised of 53013 restaurant records as well as a total of 568454 review records for each one respectively.
 
-Optimizations Made
+3. Optimizations Made
 
 Implemented modular cleaning functions for specific tasks, improving code readability and maintainability.
 
