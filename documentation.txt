@@ -44,7 +44,7 @@ RedshiftUpserter: Upserts data into Redshift (insert new records and update exis
 DatabaseManager: Manages database connections and operations.
 
 
-Airflow DAG (daily_sqllite_dag and weekely_json_dag):
+Airflow DAG (daily_sqllite_dag and weekly_json_dag):
 
 Purpose: Orchestrates the ETL pipeline using Airflow.
 
