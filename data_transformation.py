@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from abc import ABC, abstractmethod
-from data_ingestion import restaurants_df, reviews_df  # Ensure this matches the correct path
+from data_ingestion import restaurants_df, reviews_df
 
 class DataCleaner(ABC):
     def __init__(self, df):
@@ -67,20 +67,21 @@ class ReviewDataCleaner(DataCleaner):
             self.df[column] = self.df[column].str.strip()
             self.df[column] = self.df[column].str.replace('\n', ' ')
 
+# Keeping below part for the testing purpose locally
 # Example usage
-if __name__ == "__main__":
-    # Ensure data_ingestion.py has been run
-    restaurants_cleaner = RestaurantDataCleaner(restaurants_df)
-    cleaned_restaurants = restaurants_cleaner.clean()
+# if __name__ == "__main__":
+#     # Ensure data_ingestion.py has been run
+#     restaurants_cleaner = RestaurantDataCleaner(restaurants_df)
+#     cleaned_restaurants = restaurants_cleaner.clean()
 
-    reviews_cleaner = ReviewDataCleaner(reviews_df)
-    cleaned_reviews = reviews_cleaner.clean()
+#     reviews_cleaner = ReviewDataCleaner(reviews_df)
+#     cleaned_reviews = reviews_cleaner.clean()
 
-    # Set display options to show all columns
-    pd.set_option('display.max_columns', None)
+#     # Set display options to show all columns
+#     pd.set_option('display.max_columns', None)
 
-    # Print the first few rows of each DataFrame to verify the data
-    print("Restaurants DataFrame:")
-    print(cleaned_restaurants.head())
-    print("\nReviews DataFrame:")
-    print(cleaned_reviews.head())
+#     # Print the first few rows of each DataFrame to verify the data
+#     print("Restaurants DataFrame:")
+#     print(cleaned_restaurants.head())
+#     print("\nReviews DataFrame:")
+#     print(cleaned_reviews.head())

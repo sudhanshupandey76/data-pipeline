@@ -81,18 +81,19 @@ class DataLoaderManager:
         reviews_df = self.sqlite_loader.load_data()
         return restaurants_df, reviews_df
 
+# Keeping the below code commented for testing locally if required
 # Usage
-json_loader = JSONDataLoader('/Users/sudhanshu/data-pipeline/data.json')
-sqlite_loader = SQLiteDataLoader('/Users/sudhanshu/data-pipeline/database.sqlite', 'SELECT * FROM reviews')
-data_manager = DataLoaderManager(json_loader, sqlite_loader)
+# json_loader = JSONDataLoader('data-pipeline/data.json')
+# sqlite_loader = SQLiteDataLoader('data-pipeline/database.sqlite', 'SELECT * FROM reviews')
+# data_manager = DataLoaderManager(json_loader, sqlite_loader)
 
-restaurants_df, reviews_df = data_manager.load_all_data()
+# restaurants_df, reviews_df = data_manager.load_all_data()
 
-# Set display options to show all columns
-pd.set_option('display.max_columns', None)
+# # Set display options to show all columns
+# pd.set_option('display.max_columns', None)
 
-# Print the first few rows of each DataFrame to verify the data
-print("Restaurants DataFrame:")
-print(restaurants_df.head())
-print("\nReviews DataFrame:")
-print(reviews_df.head())
+# # Print the first few rows of each DataFrame to verify the data
+# print("Restaurants DataFrame:")
+# print(restaurants_df.head())
+# print("\nReviews DataFrame:")
+# print(reviews_df.head())

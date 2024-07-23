@@ -1,4 +1,4 @@
-# data-Pipeline
+# Data-Pipeline
 
 ## Overview
 
@@ -15,7 +15,7 @@ This repository contains an ETL (Extract, Transform, Load) pipeline that process
 3. **Data Loading (`data_loading.py`)**
    - Loads the cleaned data into a Redshift database.
    
-4. **Airflow DAG (`data_pipeline_dag.py`)**
+4. **Airflow DAG (`daily_sqlllite_dag.py` and `weekely_json_dag.py`)**
    - Orchestrates the ETL process and manages task dependencies.
 
 ## Requirements

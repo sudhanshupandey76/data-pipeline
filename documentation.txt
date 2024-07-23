@@ -44,11 +44,14 @@ RedshiftUpserter: Upserts data into Redshift (insert new records and update exis
 DatabaseManager: Manages database connections and operations.
 
 
-Airflow DAG (data_pipeline_dag.py):
+Airflow DAG (daily_sqllite_dag and weekely_json_dag):
 
 Purpose: Orchestrates the ETL pipeline using Airflow.
 
 Tasks:
+
+All below tasks will run weekely and daily for both json and sqllite datasets accordingly.
+
 ingest_data: Runs the data ingestion script.
 transform_data: Runs the data transformation script.
 load_data: Runs the data loading script.
@@ -61,6 +64,6 @@ The JSON and SQLite datasets are correctly formatted and accessible.
 The Redshift database is properly configured and accessible.
 Airflow is set up and configured to run the DAG.
 
-Note:- Because of time constraint couldn't implement the bsloe step
+Note:- Because of time constraint couldn't implement the below step
 
 Wanted to make it config driven, we can pass all config details, table names and business logic via config file

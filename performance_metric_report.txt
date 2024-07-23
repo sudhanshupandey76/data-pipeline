@@ -30,7 +30,7 @@ Load Time: The amount of time it took to load transformed information into targe
 
 Load Volume: They comprised of 53013 restaurant records as well as a total of 568454 review records for each one respectively.
 
-3. Optimizations Made
+Optimizations Made
 
 Implemented modular cleaning functions for specific tasks, improving code readability and maintainability.
 
@@ -43,4 +43,3 @@ Key optimizations have improved processing speeds and data quality.
 We can focus on future improvements by further optimizing data cleaning processes and 
 exploring additional parallel processing techniques.
 Also we can work on the config based approach and build a framework which will be useful for other sources also.
-
