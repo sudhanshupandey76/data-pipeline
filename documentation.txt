@@ -50,7 +50,7 @@ Purpose: Orchestrates the ETL pipeline using Airflow.
 
 Tasks:
 
-All below tasks will run weekely and daily for both json and sqllite datasets accordingly.
+All below tasks will run weekly and daily for both json and sqllite datasets accordingly.
 
 ingest_data: Runs the data ingestion script.
 transform_data: Runs the data transformation script.
